@@ -11,8 +11,8 @@ fun krawlURL(url: String, links: HashSet<String>, desNum: Int)
             val size = links.size
             println("$size $url")
             val page = Jsoup.connect(url).get()
-            val URLs = page.select("a[href]")
-            for (html in URLs) krawlURL(html.attr("abs:href"), links, desNum)
+            val urls = page.select("a[href]")
+            for (html in urls) krawlURL(html.attr("abs:href"), links, desNum)
         }
         catch (e: IOException)
         {
